@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="hub-container">
+  <header class="label-header">
+    <h1 class="label-title">{{ site.Title }}</h1>
+    <p class="label-tagline">{{ site.Params.tagline }}</p>
+  </header>
+
+  <nav class="artist-grid" aria-label="Artists">
+    {{ range (where site.RegularPages "Section" "artists").ByWeight }}
+      <a href="{{ .RelPermalink }}" class="artist-btn">
+        <span class="artist-index">0{{ .Weight }}</span>
+        <span class="artist-name">{{ .Title }}</span>
+        {{ with .Params.genre }}
+          <span class="artist-genre">{{ . }}</span>
+        {{ end }}
+      </a>
+    {{ end }}
+  </nav>
+</section>
+{{ end }}

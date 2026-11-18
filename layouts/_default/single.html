@@ -1,0 +1,35 @@
+{{ define "main" }}
+<article class="artist-page">
+  <nav class="top-nav">
+    <a href="/" class="back-btn">&larr; UNDEROATH</a>
+  </nav>
+
+  <div class="artist-card">
+    <header class="artist-card-header">
+      {{ with .Params.genre }}<span class="artist-badge">{{ . }}</span>{{ end }}
+      <h1 class="artist-page-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="artist-bio">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.links }}
+    <div class="artist-links">
+      {{ with .spotify }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="platform-btn">Spotify &nearr;</a>
+      {{ end }}
+      {{ with .youtube }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="platform-btn">YouTube &nearr;</a>
+      {{ end }}
+      {{ with .soundcloud }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="platform-btn">SoundCloud &nearr;</a>
+      {{ end }}
+      {{ with .instagram }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="platform-btn">Instagram &nearr;</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

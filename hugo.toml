@@ -1,0 +1,8 @@
+baseURL = "https://stayunderoath.com/"
+languageCode = "en-us"
+title = "UNDEROATH"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  tagline = "DACA NU ESTI NEBUN, DEVII!"
+  defaultShader = "Chains"
